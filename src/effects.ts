@@ -1,14 +1,9 @@
 import { merge } from 'rxjs/observable/merge';
 import { ignoreElements } from 'rxjs/operator/ignoreElements';
-import { Store } from '@ngrx/store';
+import { Store } from '../store';
 import { Observable } from 'rxjs/Observable';
-
+import { EffectMetadata } from './effectMetadata';
 const METADATA_KEY = '@ngrx/effects';
-
-export interface EffectMetadata {
-  propertyName: string;
-  dispatch: boolean;
-}
 
 export function Effect({ dispatch } = { dispatch: true }): PropertyDecorator {
   return function(target: any, propertyName: string) {

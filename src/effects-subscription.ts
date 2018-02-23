@@ -1,5 +1,5 @@
-import { OpaqueToken, Inject, SkipSelf, Optional, Injectable, OnDestroy } from '@angular/core';
-import { Action, Store } from '@ngrx/store';
+import { OpaqueToken, Inject, SkipSelf, Optional, Injectable, OnDestroy } from 'ng-metadata/core';
+import { Action, Store } from '../store';
 import { Observer } from 'rxjs/Observer';
 import { Subscription } from 'rxjs/Subscription';
 import { merge } from 'rxjs/observable/merge';
@@ -11,19 +11,9 @@ export const effects = new OpaqueToken('ngrx/effects: Effects');
 @Injectable()
 export class EffectsSubscription extends Subscription implements OnDestroy {
   constructor(
-    @Inject(Store) private store: Observer<Action>,
-    @Optional() @SkipSelf() public parent: EffectsSubscription,
-    @Optional() @Inject(effects) effectInstances?: any[]
+    @Inject(Store) private store: Observer<Action>
   ) {
     super();
-
-    if (Boolean(parent)) {
-      parent.add(this);
-    }
-
-    if (Boolean(effectInstances)) {
-      this.addEffects(effectInstances);
-    }
   }
 
   addEffects(effectInstances: any[]) {
