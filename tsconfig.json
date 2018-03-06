@@ -1,36 +1,36 @@
 {
-  "version": "2.0.0",
-  "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./release",
-    "target": "es5",
-    "sourceMap": false,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "removeComments": false,
-    "moduleResolution": "node",
-    "noImplicitAny": true,
-    "declaration": true,
+    "baseUrl": "src",
     "module": "commonjs",
-    "lib": ["es5", "dom", "es2015"],
+    "target": "es6",
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "node",
+    "pretty": true,
+    "stripInternal": true,
+    "outDir": "ts-out",
     "typeRoots": [
-      "../node_modules"
+      "./node_modules/@types"
     ],
     "types": [
-      "jasmine",
-      "node"
-    ],
-    "baseUrl": ".",
-    "rootDir": ".",
-    "paths": {
-      "@ngrx/effects": ["./"]
-    }
+      "angular"
+    ]
   },
-  "exclude": [
-    "node_modules",
-    "release"
+  "include": [
+    "src/**/*"
   ],
-  "angularCompilerOptions": {
-    "genDir": ".ngc"
+  "exclude": [
+    "node_modules"
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "forkChecker": true,
+    "useWebpackText": true
+  },
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "atom": {
+    "rewriteTsconfig": false
   }
 }

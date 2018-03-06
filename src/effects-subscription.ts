@@ -1,5 +1,5 @@
 import { OpaqueToken, Inject, SkipSelf, Optional, Injectable, OnDestroy } from 'ng-metadata/core';
-import { Action, Store } from '../store';
+import { Action, Store } from '@ngrx/store';
 import { Observer } from 'rxjs/Observer';
 import { Subscription } from 'rxjs/Subscription';
 import { merge } from 'rxjs/observable/merge';

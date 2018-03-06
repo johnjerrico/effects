@@ -3,7 +3,7 @@
 // Remove after this is resolved:
 // https://github.com/redux-observable/redux-observable/issues/95
 import { Injectable, Inject } from 'ng-metadata/core';
-import { Action, Dispatcher } from '../store';
+import { Action, Dispatcher } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { Operator } from 'rxjs/Operator';
 import { filter } from 'rxjs/operator/filter';
